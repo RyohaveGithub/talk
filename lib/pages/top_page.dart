@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:talk/model/user.dart';
+import 'package:talk/pages/talk_room.dart';
 
 class TopPage extends StatefulWidget {
   const TopPage({Key? key}) : super(key: key);
@@ -34,26 +35,31 @@ class _TopPageState extends State<TopPage> {
       body:ListView.builder(
           itemCount: userList.length,
           itemBuilder:(context,index){
-            return Container(
-              height: 70,
-              child: Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                    child: CircleAvatar(
-                      backgroundImage: NetworkImage(userList[index].imagePath),
-                      radius: 30,
+            return InkWell(
+              onTap:(){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>TalkRoom(userList[index].name)));
+              },
+              child: Container(
+                height: 70,
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: CircleAvatar(
+                        backgroundImage: NetworkImage(userList[index].imagePath),
+                        radius: 30,
+                      ),
                     ),
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(userList[index].name,style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
-                      Text(userList[index].lastMessage,style: TextStyle(color: Colors.grey),),
-                    ],
-                  )
-                ],
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(userList[index].name,style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                        Text(userList[index].lastMessage,style: TextStyle(color: Colors.grey),),
+                      ],
+                    )
+                  ],
+                ),
               ),
             );
     }
