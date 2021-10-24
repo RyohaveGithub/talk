@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:talk/model/user.dart';
+import 'package:talk/pages/settings_profile.dart';
 import 'package:talk/pages/talk_room.dart';
 
 class TopPage extends StatefulWidget {
@@ -31,6 +32,14 @@ class _TopPageState extends State<TopPage> {
     return Scaffold(
       appBar: AppBar(
         title:Text("チャットアプリ"),
+        actions: [
+          IconButton(
+              icon: Icon(Icons.settings),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>SettingsProfilePage()));
+            },
+          )
+        ],
       ),
       body:ListView.builder(
           itemCount: userList.length,
