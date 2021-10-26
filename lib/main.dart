@@ -2,11 +2,13 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:talk/pages/top_page.dart';
 import 'package:talk/utils/firebase.dart';
+import 'package:talk/utils/shared_prefs.dart';
 
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
 
   await Firebase.initializeApp();
+  await SharedPrefs.setInstance();
   Firestore.addUser();
 
   runApp(const MyApp());

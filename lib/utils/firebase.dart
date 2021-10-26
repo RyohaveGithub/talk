@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:talk/utils/shared_prefs.dart';
 
 class Firestore{
   static FirebaseFirestore _firebaseInstance = FirebaseFirestore.instance;
@@ -11,7 +12,12 @@ class Firestore{
         "name":"nanasi",
         "imagePath":"https://assets.st-note.com/production/uploads/images/33258191/26e72cd1c817d16409230ea54273d3f2.png?width=330&height=240&fit=bounds"
       });
-      print("アカウント作成が完了");
+      print("アカウント作成完了");
+
+      print(newDoc.id);
+      await SharedPrefs.setUid(newDoc.id);
+      String? uid = SharedPrefs.getUid();
+      print(uid);
 
       List<String>? userIds = await getUser();
       userIds!.forEach((user) async {
