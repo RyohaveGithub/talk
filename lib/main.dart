@@ -6,16 +6,24 @@ import 'package:talk/utils/shared_prefs.dart';
 
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
-
   await Firebase.initializeApp();
   await SharedPrefs.setInstance();
-  Firestore.addUser();
-
+  checkAccount();
   runApp(const MyApp());
 }
 
+  Future<void> checkAccount()async{
+    String uid = SharedPrefs.getUid();
+    if(uid == ""){
+      Firestore.addUser();
+    }else{
+      Firestore.getRooms(uid);
+    }
+  }
+
+
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

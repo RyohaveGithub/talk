@@ -5,7 +5,7 @@ import 'package:talk/pages/settings_profile.dart';
 import 'package:talk/pages/talk_room.dart';
 
 class TopPage extends StatefulWidget {
-  const TopPage({Key? key}) : super(key: key);
+  const TopPage({Key key}) : super(key: key);
 
   @override
   _TopPageState createState() => _TopPageState();
@@ -17,13 +17,11 @@ class _TopPageState extends State<TopPage> {
         name: '田中',
         uid: 'abc',
         imagePath: 'https://assets.st-note.com/production/uploads/images/33258191/26e72cd1c817d16409230ea54273d3f2.png?width=330&height=240&fit=bounds',
-        lastMessage: 'こんにちは'
     ),
     User(
         name: '小林',
         uid: 'def',
         imagePath: 'https://cbtdev.net/wp-content/uploads/2020/06/udemy-flutter-300x158.png',
-        lastMessage: 'ありがとう'
     ),
   ];
 
@@ -64,7 +62,7 @@ class _TopPageState extends State<TopPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(userList[index].name,style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
-                        Text(userList[index].lastMessage,style: TextStyle(color: Colors.grey),),
+                        Text("talkUserList[index].lastMessage",style: TextStyle(color: Colors.grey),),
                       ],
                     )
                   ],

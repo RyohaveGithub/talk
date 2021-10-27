@@ -1,7 +1,7 @@
 class Message{
-  late String message;
-  late bool isMe;
-  late DateTime sendTime;
+   String message;
+   bool isMe;
+   DateTime sendTime;
 
-  Message({required this.message,required this.isMe,required this.sendTime});
+  Message({ this.message, this.isMe, this.sendTime});
 }

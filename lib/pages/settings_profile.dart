@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SettingsProfilePage extends StatefulWidget {
-  const SettingsProfilePage({Key? key}) : super(key: key);
+  const SettingsProfilePage({Key key}) : super(key: key);
 
   @override
   _SettingsProfilePageState createState() => _SettingsProfilePageState();
