@@ -83,6 +83,7 @@ class Firestore {
             roomId: doc.id,
             lastMessage: doc.data()["last_message"] ?? ""
         );
+        
         roomList.add(room);
       }
     });
