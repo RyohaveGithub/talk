@@ -14,14 +14,14 @@ class TopPage extends StatefulWidget {
 class _TopPageState extends State<TopPage> {
   List<User> userList =[
     User(
-        name: '田中',
-        uid: 'abc',
-        imagePath: 'https://assets.st-note.com/production/uploads/images/33258191/26e72cd1c817d16409230ea54273d3f2.png?width=330&height=240&fit=bounds',
+      name: '田中',
+      uid: 'abc',
+      imagePath: 'https://assets.st-note.com/production/uploads/images/33258191/26e72cd1c817d16409230ea54273d3f2.png?width=330&height=240&fit=bounds',
     ),
     User(
-        name: '小林',
-        uid: 'def',
-        imagePath: 'https://cbtdev.net/wp-content/uploads/2020/06/udemy-flutter-300x158.png',
+      name: '小林',
+      uid: 'def',
+      imagePath: 'https://cbtdev.net/wp-content/uploads/2020/06/udemy-flutter-300x158.png',
     ),
   ];
 
@@ -32,7 +32,7 @@ class _TopPageState extends State<TopPage> {
         title:Text("チャットアプリ"),
         actions: [
           IconButton(
-              icon: Icon(Icons.settings),
+            icon: Icon(Icons.settings),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context)=>SettingsProfilePage()));
             },
@@ -69,8 +69,8 @@ class _TopPageState extends State<TopPage> {
                 ),
               ),
             );
-    }
-    ),
+          }
+      ),
     );
   }
 }

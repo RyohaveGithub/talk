@@ -7,6 +7,7 @@ class Firestore {
   static FirebaseFirestore _firebaseInstance = FirebaseFirestore.instance;
   static final userRef = _firebaseInstance.collection("user");
   static final roomRef = _firebaseInstance.collection("room");
+  
 
   static Future<void> addUser() async {
     try {
@@ -83,7 +84,7 @@ class Firestore {
             roomId: doc.id,
             lastMessage: doc.data()["last_message"] ?? ""
         );
-        
+
         roomList.add(room);
       }
     });
