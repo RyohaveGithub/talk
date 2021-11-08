@@ -7,7 +7,7 @@ class Firestore {
   static FirebaseFirestore _firebaseInstance = FirebaseFirestore.instance;
   static final userRef = _firebaseInstance.collection("user");
   static final roomRef = _firebaseInstance.collection("room");
-  
+  static final roomSnapshot = roomRef.snapshots();
 
   static Future<void> addUser() async {
     try {
