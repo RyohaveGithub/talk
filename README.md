@@ -1,4 +1,4 @@
-# talk
+# チャットアプリ
 
 A new Flutter project.
 
