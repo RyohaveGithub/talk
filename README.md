@@ -7,3 +7,5 @@ Flutter × Firebaseで作成したチャットアプリです
 LINE風のUIにしています
 
 Udemyの動画を参考に作成しました
+
+ぜひお試しください
