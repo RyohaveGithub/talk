@@ -35,4 +35,4 @@ class MyApp extends StatelessWidget {
   }
 }
 
-//todo IOS非対応
+//todo IOS対応
